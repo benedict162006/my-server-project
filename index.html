@@ -4,64 +4,60 @@
     <meta charset="UTF-8">
     <title>Web vs File Server Project</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            background-color: #f4f7f6; 
-            padding: 40px; 
-        }
-        .box { 
-            background: white; 
-            padding: 25px; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-            display: inline-block; 
-        }
-        img { 
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; padding: 40px; }
+        .box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; }
+        
+        /* Itatago muna ang image sa simula */
+        #google-drive-image { 
+            display: none; 
             width: 320px; 
             border-radius: 8px; 
             border: 2px solid #2ecc71; 
-            margin-top: 15px;
-            display: none; /* hidden muna */
+            margin-top: 15px; 
         }
-        .label { 
-            font-weight: bold; 
-            color: #2c3e50; 
-        }
+
+        .label { font-weight: bold; color: #2c3e50; }
+
+        /* Style para sa button */
         .enter-btn {
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #c8a2ff; /* light violet */
+            background-color: #2ecc71;
             color: white;
+            padding: 10px 20px;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 20px;
+            transition: background 0.3s;
         }
+
         .enter-btn:hover {
-            background-color: #b084f5;
+            background-color: #27ae60;
         }
     </style>
 </head>
 <body>
     <div class="box">
-        <h1>[BENEDICT IBO]</h1>
-        <h3>Section: [BSIT III-F2]</h3>
+        <h1>BENEDICT IBO</h1>
+        <h3>Section: BSIT III-F2</h3>
         <p class="label">Website hosted by: GitHub (Web Server)</p>
         <p class="label">Image hosted by: Google Drive (File Server)</p>
         <hr>
 
-        <button class="enter-btn" onclick="showImage()">Enter</button>
+        <button class="enter-btn" id="show-image-btn">Enter to View Image</button>
 
         <br>
-
-        <img id="serverImage" src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+        <img id="google-drive-image" src="https://drive.google.com/uc?export=view&id=1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
     </div>
 
     <script>
-        function showImage() {
-            document.getElementById("serverImage").style.display = "block";
-        }
+        // JavaScript para sa click event
+        document.getElementById('show-image-btn').addEventListener('click', function() {
+            // Lalabas ang image
+            document.getElementById('google-drive-image').style.display = 'inline-block';
+            // Itatago ang button pagkatapos i-click (optional)
+            this.style.display = 'none';
+        });
     </script>
 </body>
 </html>

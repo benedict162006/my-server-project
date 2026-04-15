@@ -1,24 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Web vs File Server Project</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; padding: 40px; }
-        .box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; }
-        img { width: 320px; border-radius: 8px; border: 2px solid #2ecc71; margin-top: 15px; }
-        .label { font-weight: bold; color: #2c3e50; }
-    </style>
+<meta charset="UTF-8">
+<title>Web vs File Server Project</title>
+
+<style>
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    background-color: #f4f7f6; 
+    padding: 40px; 
+}
+
+.box { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    display: none; /* hidden muna */
+}
+
+img { 
+    width: 320px; 
+    border-radius: 8px; 
+    border: 2px solid #2ecc71; 
+    margin-top: 15px; 
+}
+
+.label { 
+    font-weight: bold; 
+    color: #2c3e50; 
+}
+
+.enter-btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.enter-btn:hover {
+    background-color: #27ae60;
+}
+</style>
+
 </head>
+
 <body>
-    <div class="box">
-        <h1>[BENEDICT IBO]</h1>
-        <h3>Section: [BSIT III-F2]</h3>
-        <p class="label">Website hosted by: GitHub (Web Server)</p>
-        <p class="label">Image hosted by: Google Drive (File Server)</p>
-        <hr>
-        <img src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
-    </div>
+
+<!-- ENTER BUTTON -->
+<button class="enter-btn" onclick="enterSite()">ENTER</button>
+
+<div class="box" id="contentBox">
+    <h1>[BENEDICT IBO]</h1>
+    <h3>Section: [BSIT III-F2]</h3>
+
+    <p class="label">Website hosted by: GitHub (Web Server)</p>
+    <p class="label">Image hosted by: Google Drive (File Server)</p>
+
+    <hr>
+
+    <img src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+</div>
+
+<script>
+function enterSite() {
+    document.querySelector(".enter-btn").style.display = "none";
+    document.getElementById("contentBox").style.display = "inline-block";
+}
+</script>
+
 </body>
 </html>
-

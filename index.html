@@ -17,21 +17,10 @@ body {
     padding: 25px; 
     border-radius: 12px; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    display: none; /* hidden muna */
+    display: inline-block;
 }
 
-img { 
-    width: 320px; 
-    border-radius: 8px; 
-    border: 2px solid #2ecc71; 
-    margin-top: 15px; 
-}
-
-.label { 
-    font-weight: bold; 
-    color: #2c3e50; 
-}
-
+/* ENTER BUTTON */
 .enter-btn {
     padding: 12px 25px;
     font-size: 18px;
@@ -45,16 +34,28 @@ img {
 .enter-btn:hover {
     background-color: #27ae60;
 }
+
+/* IMAGE HIDDEN BY DEFAULT */
+img {
+    width: 320px;
+    border-radius: 8px;
+    border: 2px solid #2ecc71;
+    margin-top: 15px;
+    display: none; /* hidden muna */
+}
+
+.label { 
+    font-weight: bold; 
+    color: #2c3e50; 
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- ENTER BUTTON -->
-<button class="enter-btn" onclick="enterSite()">ENTER</button>
+<div class="box">
 
-<div class="box" id="contentBox">
     <h1>[BENEDICT IBO]</h1>
     <h3>Section: [BSIT III-F2]</h3>
 
@@ -63,13 +64,18 @@ img {
 
     <hr>
 
-    <img src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+    <!-- ENTER BUTTON -->
+    <button class="enter-btn" onclick="showImage()">ENTER</button>
+
+    <!-- IMAGE -->
+    <img id="serverImage" src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+
 </div>
 
 <script>
-function enterSite() {
+function showImage() {
     document.querySelector(".enter-btn").style.display = "none";
-    document.getElementById("contentBox").style.display = "inline-block";
+    document.getElementById("serverImage").style.display = "block";
 }
 </script>
 

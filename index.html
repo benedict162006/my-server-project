@@ -3,58 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>Web vs File Server Project</title>
+
     <style>
         body { 
             font-family: Arial, sans-serif; 
             text-align: center; 
-            background-color: #f4f7f6; 
             padding: 40px; 
+            color: #2c3e50;
+
+            /* 🌈 Animated Gradient Background */
+            background: linear-gradient(-45deg, #f3e8ff, #e0c3fc, #d8b4fe, #c084fc);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .box { 
             background: white; 
             padding: 25px; 
             border-radius: 12px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
             display: inline-block; 
         }
+
         img { 
             width: 320px; 
             border-radius: 8px; 
-            border: 2px solid #2ecc71; 
+            border: 2px solid #c084fc; 
             margin-top: 15px; 
-            display: none; /* hidden at first */
+            display: none;
         }
+
         .label { 
             font-weight: bold; 
-            color: #2c3e50; 
         }
+
+        /* 💧 Liquid Button */
         button {
-            background-color: #d8b4fe; /* light violet */
+            position: relative;
+            background: #d8b4fe;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             font-size: 16px;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
             margin-top: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            color: #2c3e50;
         }
+
         button:hover {
-            background-color: #c084fc;
+            background: #c084fc;
+            transform: scale(1.05);
         }
+
+        /* Ripple effect */
+        button::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+        }
+
+        button:active::after {
+            width: 200px;
+            height: 200px;
+            opacity: 1;
+            transition: 0.4s;
+        }
+
     </style>
 </head>
+
 <body>
+
     <div class="box">
-        <h1>[BENEDICT IBO]</h1>
-        <h3>Section: [BSIT III-F2]</h3>
+        <h1>BENEDICT IBO</h1>
+        <h3>Section: BSIT III-F2</h3>
+
         <p class="label">Website hosted by: GitHub (Web Server)</p>
         <p class="label">Image hosted by: Google Drive (File Server)</p>
         <hr>
 
-        <!-- Enter Button -->
         <button onclick="showImage()">Enter</button>
 
-        <!-- Image -->
-        <img id="serverImage" src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+        <img id="serverImage" 
+        src="https://drive.google.com/uc?export=view&id=1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" 
+        alt="Server Image">
+
     </div>
 
     <script>
@@ -62,5 +110,6 @@
             document.getElementById("serverImage").style.display = "block";
         }
     </script>
+
 </body>
 </html>

@@ -33,10 +33,12 @@
 
         img { 
             width: 320px; 
-            border-radius: 8px; 
+            border-radius: 10px; 
             border: 2px solid #c084fc; 
             margin-top: 15px; 
             display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
         }
 
         .label { 
@@ -69,7 +71,7 @@
             position: absolute;
             width: 0;
             height: 0;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.6);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             top: 50%;
@@ -99,6 +101,7 @@
 
         <button onclick="showImage()">Enter</button>
 
+        <!-- ✅ Working Google Drive Image -->
         <img id="serverImage" 
         src="https://drive.google.com/uc?export=view&id=1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" 
         alt="Server Image">
@@ -107,7 +110,12 @@
 
     <script>
         function showImage() {
-            document.getElementById("serverImage").style.display = "block";
+            let img = document.getElementById("serverImage");
+            img.style.display = "block";
+
+            setTimeout(() => {
+                img.style.opacity = "1";
+            }, 50);
         }
     </script>
 

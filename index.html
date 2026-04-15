@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <title>Web vs File Server Project</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f7f6; padding: 40px; }
-        .box { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: inline-block; }
-        img { width: 320px; border-radius: 8px; border: 2px solid #2ecc71; margin-top: 15px; }
-        .label { font-weight: bold; color: #2c3e50; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            background-color: #f4f7f6; 
+            padding: 40px; 
+        }
+        .box { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            display: inline-block; 
+        }
+        img { 
+            width: 320px; 
+            border-radius: 8px; 
+            border: 2px solid #2ecc71; 
+            margin-top: 15px;
+            display: none; /* hidden muna */
+        }
+        .label { 
+            font-weight: bold; 
+            color: #2c3e50; 
+        }
+        .enter-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #c8a2ff; /* light violet */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .enter-btn:hover {
+            background-color: #b084f5;
+        }
     </style>
 </head>
 <body>
@@ -17,8 +50,18 @@
         <p class="label">Website hosted by: GitHub (Web Server)</p>
         <p class="label">Image hosted by: Google Drive (File Server)</p>
         <hr>
-        <img src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
+
+        <button class="enter-btn" onclick="showImage()">Enter</button>
+
+        <br>
+
+        <img id="serverImage" src="https://lh3.googleusercontent.com/d/1gGhIdLs44udyxBEm3r2iyq_CXAozamyq" alt="Server Image">
     </div>
+
+    <script>
+        function showImage() {
+            document.getElementById("serverImage").style.display = "block";
+        }
+    </script>
 </body>
 </html>
-
